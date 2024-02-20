@@ -2,7 +2,7 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #303030;
-    font-size:20px;
+    font-size: 1.5em;
     color: #61AD68;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
@@ -61,7 +61,7 @@ body {
 .title {
     flex: 0.142;
     background-color: #262626;
-    font-size:30px;
+    font-size:2em;
     color: #e0ffdf;
 }
 
