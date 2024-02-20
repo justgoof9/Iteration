@@ -135,13 +135,13 @@ li a {
     border: 1px solid black;
     width: 100%;
     box-sizing: border-box;
-    height: 496px;
+    height: 50vh;
 }
   
 .popupTitle {
     border: 1px solid black;
     box-sizing: border-box;
-    height: 100px;
+    height: 10vh;
 }
   
 .closeButton {
