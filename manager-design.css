@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.top-row {
+    background-color: #201E1E;
+    color: #61AD68;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0;
+    border-bottom: 2px solid #61AD68;
+    font-size:50px;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+
+}
+
+.nav-bar {
+    flex-basis: 200px;
+    background-color: #201E1E;
+    padding: 10px;
+    flex:1;
+}
+
+.nav-bar a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #61AD68;
+    border-bottom: 1px solid #61AD68;
+    transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #404040;
+}
+
+.nav-bar a.selected {
+    background-color: #61AD68;
+    color: #201E1E;
+    font-weight: bold;
+}
+
+.producer-list, .time-slots, .add-dj {
+    flex-grow: 1;
+    padding: 0; 
+    box-sizing: border-box;
+    margin-bottom: 0;
+    background-color: #201E1E;
+}
+.time-slots, .producer-list {
+    border-left: 2px solid #61AD68;
+}
+
+.producer-list header, .time-slots header {
+    text-align: center;
+    background-color: #201E1E;
+    color: #e0ffdf;
+    padding: 10px;
+    margin-bottom: 0;
+    border-left: 2px solid #61AD68;
+    border-bottom: 2px solid #61AD68;
+    
+}
+
+
+.producer-list ul, .time-slots ul {
+    margin: 0;
+    padding: 30px;
+    color: white;
+}
+
+.add-dj button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #61AD68;
+}
+.list-of-djs li {
+    align-items: center;
+    border-bottom: 1px solid #61AD68;
+    padding: 5px;
+}
+.list-of-djs li .actions{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
