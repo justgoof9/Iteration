@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Radio</title>
-    <link rel="stylesheet" href="group03.css">
+    <title>CommonPage</title>
+    <link rel="stylesheet" href="Core.css">
 </head>
 <body>
-    <section class="top-row"> Indian Radio Manager</section>
-    <main class="container">
-        <nav class="column">
-            <a href="CommonPage.html" class="row homeBack center"><div>Home</div></a>
-            <a href="ProducerLogin.html" class="row homeBack center"><div>Back</div></a>
-            <a href = "Manager.html" class="row center"><div>Manager</div></a>
-            <a href="ProducerLogin.html" class="row center"><div>Producer</div></a>
-            <div class="row center">DJ</div>
-        </nav>
-        <section class="column">
-            <header class="row title center">Shift Selection</header>
-            <div class="row">
-                <div>
-                    <ul>
-                        <li><a href="TimeSlot.html">DJ1</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="TimeSlot.html">DJ1</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="TimeSlot.html">DJ1</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section class="column">
-            <header class="row title center">Time Slot List</header>
-            <div class="row"></div>
-        </section>
-    </main>
+    <row class = "rTitle">
+        Indian Pop Radio Manager
+    </row>
+    <container class="vContainer">
+        <column class="cNav">
+            <row class="rNav">
+                <a href="CommonPage.html">Home</a>
+            </row>
+            <row class="rNav">
+                <a href="ProducerLogin.html">Back</a>
+            </row>
+            <row class="row">
+                Manager
+            </row>
+            <row class="row">
+                <a href="ProducerLogin.html">Producer</a>
+            </row>
+            <row class="row">
+                DJ
+            </row>
+        </column>
+        <column class="cSelect">
+            <row class="rHeading">
+                DJ Select
+            </row>
+            <row class="rSelect">
+                <ul id="djList">
+
+                </ul>
+            </row>
+        </column>
+        <column class = "cMain">
+            <row class = "rHeading">
+                Time Slot List
+            </row>
+            <row class = "row">
+                <container class="pContainer">
+                    <column class="column" id="djColumn">
+
+                    </column>
+                </container>
+                <container class="popup">
+                    <container class="pContainer">
+                        <column class="column">
+                            <row class="rHeading" style="background-color: #201E1E;">
+                                PlayList Editor
+                                <a href="#" class="closeButton" style="font-size: 20px; ;">X</a>
+                            </row>
+                            <row class="row">
+                                <ul id="songList">
+
+                                </ul>
+                            </row>
+                        </column>
+                    </container>
+                </container>
+            </row>
+        </column>
+    </container>
+    <script src="ProducerJS.js"></script>
 </body>
 </html>
