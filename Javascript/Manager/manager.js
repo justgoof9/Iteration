@@ -14,6 +14,14 @@ let timeSlots = {
     ]
 }
 
+//Initalize page.
+const initalizePage = () => {
+    displayTimeSlots('Producer1');
+    console.log("initalize runs");
+};
+
+window.addEventListener('load', initalizePage);
+
 //Inline Event handler approach
 const printTimeSlots = () => {
     console.log(timeSlots);
@@ -48,10 +56,15 @@ document.querySelectorAll('.producer-list ul li').forEach((producerDJ) => {
     });
 });
 
+//Default values.
+let selectedProducer = "Producer1";
+let selectedDJIndex = 0;
+
 //Editing the DJ object.
 const editDJModal = (producer, djIndex) => {
     const selectedDJ = timeSlots[producer][djIndex];
-
+    selectedProducer = producer;
+    selectedDJIndex = djIndex;
     // Log to check if the function is called
     console.log('Open Edit Modal:', selectedDJ);
 
@@ -67,12 +80,27 @@ const editDJModal = (producer, djIndex) => {
     modal.showModal();
 };
 
-document.querySelectorAll('.edit-btn').forEach((editBtn, index) => {
-    editBtn.addEventListener('click', () => {
-        const selectedProducer = 'Producer' + (index + 1);
-        editDJModal(selectedProducer, index);
-    });
+document.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.classList.contains('edit-btn')) {
+        // Traverse up the DOM to find the closest 'li' element
+        const listItem = target.closest('li');
+
+        // Check if the listItem exists
+        if (listItem) {
+            // Find the index of the listItem among its siblings
+            const index = Array.from(listItem.parentElement.children).indexOf(listItem);
+
+            // Get the selected producer based on the index
+            const selectedProducer = 'Producer' + (index + 1);
+
+            // Call the editDJModal function with the selected information
+            editDJModal(selectedProducer, index);
+        }
+    }
 });
+
 
 // Close DJ modal screen.
 const closeDJModal = () => {
@@ -85,9 +113,45 @@ const closeDJModal = () => {
         console.log("DJ Modal not found!");
     }
 }
+
+//When edited, saves the new values added and updates the object
+const saveDJ = () => {
+    const djName = document.getElementById('djName').value;
+    const djDate = document.getElementById('djDate').value;
+    const djStartTime = document.getElementById('djStartTime').value;
+    const djEndTime = document.getElementById('djEndTime').value;
+
+    //Make sure all the input fields are filled.
+    if(!djName || !djDate || !djStartTime || !djEndTime) {
+        alert("Fill in all the fields!");
+        return;
+    }
+
+    //Update the object.
+    if(selectedDJIndex !== null && selectedDJIndex !== -1) {
+        if(selectedProducer) {
+            timeSlots[selectedProducer][selectedDJIndex] = {
+                name : djName,
+                date : djDate,
+                start : djStartTime,
+                end : djEndTime
+            };
+        
+
+        closeDJModal();
+
+        displayTimeSlots(selectedProducer);
+        }else {
+            console.log("Invalid Producer selected");
+        }
+    }else {
+        console.log("Invalid DJ info");
+    }
+}
+
 //To make this function accesible from global scope.
 window.closeDJModal = closeDJModal;
-
+window.saveDJ = saveDJ;
 //For login page.
 const validLogin = (e) => {
     e.preventDefault();
