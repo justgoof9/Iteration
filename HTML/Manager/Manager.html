@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>Radio</title>
-    <link rel="stylesheet" href="manager-design.css">
+    <link rel="stylesheet" href="../../CSS/Manager/manager-design.css">
+    <script type = "module" src = "../../Javascript/Manager/manager.js"></script>
+    <script  src = "../../Javascript/Manager/manager-timeslots.js" ></script>
     <style>
         .pop-up:taget {
             display:block
@@ -13,11 +15,11 @@
     <section class = "top-row"> Indian Radio Manager</section>
     <main>
         <nav class = "nav-bar">
-            <a href = "CommonPage.html"> Home </a>
-            <a href = "CommonPage.html"> Back </a>
-            <a href = "Manager.html" class = "selected"> Manager </a>
-            <a href = "Producer.html"> Producer </a>
-            <a href = "CommonPage.html"> DJ </a>
+            <a href = "../../HTML/CommonPage/CommonPage.html" > Home </a>
+            <a href = "../../HTML/Manager/ManagerLogin.html" > Back </a>
+            <a href = "../../HTML/Manager/Manager.html" class = "selected" > Manager </a>
+            <a href = "../../HTML/Producer/ProducerLogin.html" > Producer </a>
+            <a href = "../../HTML/DJ//DJ.html" > DJ </a>
             
         </nav>
 
@@ -25,9 +27,9 @@
             <header> Producers </header>
             <div class = "producer-list">
                 <ul>
-                    <li>PD1</li>
-                    <li>PD2</li>
-                    <li>PD3</li>
+                    <li>Producer1</li>
+                    <li>Producer2</li>
+                    <li>Producer3</li>
                 </ul
             </div>
         </section>
@@ -35,28 +37,34 @@
         <section class = "time-slots">
             <header> Timeslot List</header>
             <div class = "add-dj">
-                <button> Add DJ</button>
+                <button id = "addDJBtn"> Add DJ</button>
             </div>
             
             <div class = "list-of-djs" style="font-size: 20px; ">
                 <ul>
-                    <li>
-                        <span>John Doe Date: 2/10/2024 Start: 1:00pm End 3:00pm</span>
-                        <div class = "actions">
-                            <button class = "edit-btn">Edit</button>
-                            <button class = "delete-btn">Delete</button>
-                        </div>
-                    </li>
-                    <li>
-                        <span>Jane Doe Date: 2/11/2024 Start: 1:00pm End 3:00pm</span>
-                        <div class = "actions">
-                            <button class = "edit-btn">Edit</button>
-                            <button class = "delete-btn">Delete</button>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </section>
+
+        <dialog  id = "djModal">
+            <button onclick = "closeDJModal()">Exit</button>
+            <form id = "djModalForm">
+                <label for = "djName">Name: </label>
+                <input type = "text" id = "djName" name = "djName">
+
+                <label for = "djDate">Date: </label>
+                <input type = "text" id = "djDate" name = "djDate">
+
+                <label for = "djStartTime">Start Time: </label>
+                <input type = "text" id = "djStartTime" name = "djStartTime">
+
+                <label for = "djEndTime">End Time: </label>
+                <input type = "text" id = "djEndTime" name = "djEndTime">
+
+                <button type = "button" onclick = "saveDJ()">Save</button>
+            </form>
+        </dialog>
     </main>
+    
 </body>
 </html>
