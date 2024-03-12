@@ -48,6 +48,45 @@ document.querySelectorAll('.producer-list ul li').forEach((producerDJ) => {
     });
 });
 
+//Editing the DJ object.
+const editDJModal = (producer, djIndex) => {
+    const selectedDJ = timeSlots[producer][djIndex];
+
+    // Log to check if the function is called
+    console.log('Open Edit Modal:', selectedDJ);
+
+    // Fill the form with the selected DJ's values
+    document.getElementById('djName').value = selectedDJ.name;
+    document.getElementById('djDate').value = selectedDJ.date;
+    document.getElementById('djStartTime').value = selectedDJ.start;
+    document.getElementById('djEndTime').value = selectedDJ.end;
+
+    // Display the modal
+    const modal = document.getElementById('djModal');
+    console.log('Modal Element:', modal);
+    modal.showModal();
+};
+
+document.querySelectorAll('.edit-btn').forEach((editBtn, index) => {
+    editBtn.addEventListener('click', () => {
+        const selectedProducer = 'Producer' + (index + 1);
+        editDJModal(selectedProducer, index);
+    });
+});
+
+// Close DJ modal screen.
+const closeDJModal = () => {
+    const modal = document.getElementById('djModal');
+
+    //check if modal exists
+    if(modal) {
+        modal.close()
+    }else {
+        console.log("DJ Modal not found!");
+    }
+}
+//To make this function accesible from global scope.
+window.closeDJModal = closeDJModal;
 
 //For login page.
 const validLogin = (e) => {

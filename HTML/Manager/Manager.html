@@ -37,7 +37,7 @@
         <section class = "time-slots">
             <header> Timeslot List</header>
             <div class = "add-dj">
-                <button> Add DJ</button>
+                <button id = "addDJBtn"> Add DJ</button>
             </div>
             
             <div class = "list-of-djs" style="font-size: 20px; ">
@@ -59,6 +59,25 @@
                 </ul>
             </div>
         </section>
+
+        <dialog  id = "djModal">
+            <button onclick = "closeDJModal()">Exit</button>
+            <form id = "djModalForm">
+                <label for = "djName">Name: </label>
+                <input type = "text" id = "djName" name = "djName">
+
+                <label for = "djDate">Date: </label>
+                <input type = "text" id = "djDate" name = "djDate">
+
+                <label for = "djStartTime">Start Time: </label>
+                <input type = "text" id = "djStartTime" name = "djStartTime">
+
+                <label for = "djEndTime">End Time: </label>
+                <input type = "text" id = "djEndTime" name = "djEndTime">
+
+                <button type = "button" onclick = "saveDJ()">Save</button>
+            </form>
+        </dialog>
     </main>
     
 </body>
