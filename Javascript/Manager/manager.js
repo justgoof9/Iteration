@@ -142,7 +142,7 @@ const saveDJ = () => {
 
     //Check all the input fields are filled.
     if (!djName || !djDate || !djStartTime || !djEndTime) {
-        alert("Fill in all the fields!");
+        window.alert("Fill in all the fields!");
         return;
     }
 
