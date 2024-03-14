@@ -3,47 +3,135 @@
 
 <head>
     <title>Radio</title>
-    <link rel="stylesheet" href="djgroovy.css">
+    <link rel="stylesheet" href="../../CSS/DJ/djgroovy.css">
 </head>
 
+
+
 <body>
+    <script src="../../Javascript/DJ/playlist.js"> </script>
+
     <section class="top-row">Radio Manager</section>
     <main class="container">
-        <nav class="column">
-            <a href="CommonPage.html" class="row homeBack center">
+        <nav class="flex-column">
+            <a href="../../HTML/CommonPage/CommonPage.html" class="row homeBack center">
                 <div>Home</div>
             </a>
-            <a href="Producer.html" class="row homeBack center">
+            <a href="../../HTML/Producer/ProducerLogin.html" class="row homeBack center">
                 <div>Back</div>
             </a>
             <div class="row center">Manager</div>
-            <a href="DJ.html" class="row center">
+            <a href="../DJ/DJ.html" class="row center">
                 <div>DJ</div>
             </a>
-
         </nav>
-        <section class="column">
-            <header class="row title center">Current Playlist</header>
-            <div class="row">
-                <div>
-                    <ul id="currentplaylist">
-                        <li>Song 1 <button>Remove</button></li>
-                        <li>Song 2 <button>Remove</button></li>
-                        <li>Song 3 <button>Remove</button></li>
-                        <li>Song 4 <button>Remove</button></li>
-                        <li>Song 5 <button>Remove</button></li>
-                        <li>Song 6 <button>Remove</button></li>
+        <section class="list-container column">
+            
+            <header class="list-title">Current Playlist</header>
+            <div class>
+                <h1>Enter Songs to Add to the Current Playlist</h1>
+                <input type="text" id="textInput" placeholder="Search Songs">
+                <button onclick="addItem()">Add Song</button>
+            </div>
+            <div class="grid-container column">
+                <div class="list-container">
+                    <ul class="song-list" id="currentplaylist">
+                        <li class="song-single">
+                            O Fortuna
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
+                        <li class="song-single">
+                            American Pie
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
+                        <li class="song-single">
+                            Enter Sandman
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
+                        <li class="song-single">
+                            Trap Queen
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
+                        <li class="song-single">
+                            Chicken Dance
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
+                        <li class="song-single">
+                            Cotton Eye Joe
+                            <div class="dropdown-menu">
+                                <div class="dropdown-option" onclick="removeCurrentSong(this)">Delete</div>
+                            </div>
+                        </li>
                     </ul>
-
                 </div>
             </div>
         </section>
-        <section class="column">
-            <header class="row title center">Previous Playlists</header>
+        
+    
+    <section class="list-container column">
+            
+        <header class="list-title">Previous Playlists</header>
+        <div class="grid-container column">
+            <div class="list-container">
+                <ul class="song-list">
+                    <li>Playlist 1</li>
+                    <li>Playlist 2</li>
+                    <li>Playlist 3</li>
+                </ul
+            </div>
+        </div>
+        
 
-            <div class="playlist">
+
+    <!-- </section class="column">
+    <div class="list-container" id="rightList">
+        <h2>Playlist 2</h2>
+        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+            <span>Item A</span>
+            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+        </div>
+        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+            <span>Item B</span>
+            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+        </div>
+        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+            <span>Item C</span>
+            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+        </div>
+    </div>
+</section>
+        </section>
+
+        </section class="column">
+            <div class="list" id="rightList">
+                <h2>Playlist 2</h2>
+                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+                    <span>Item A</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+                    <span>Item B</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
+                    <span>Item C</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </section>
+
+       <div class="playlist">
                 <h2>Prior Playlist</h2>
-
                 <table border="1">
                     <tr>
                         <th>Playlist 1</th>
@@ -52,7 +140,7 @@
                     </tr>
                     <tr>
                         <th>Song 4
-                            <button>Remove</button>
+                            <button onclick="this.parentNode.parentNode.remove()">Delete</button>
                             <button>Copy</button>
                         </th>
                         <th>Song 5
@@ -93,11 +181,12 @@
                         </td>
                     </tr>
                 </table>
-
-
-
-        </section>
+            </div> -->
+        </section> -->
     </main>
+
+    <!-- Include the external JavaScript module file -->
+
 </body>
 
 </html>

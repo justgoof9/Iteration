@@ -6,10 +6,11 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #303030;
-    font-size: 1.5em;
-    color: #17d7c1;
-    font-weight: 1 ;
-    font-family: 'Freckle Face', cursive;;
+    font-size: 14px;
+    color: #268f14;
+    font-weight: 1;
+    font-family: 'sans-serif';
+    ;
 }
 
 .container {
@@ -19,18 +20,18 @@ body {
     width: 100vw;
 }
 
-.column {
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.column:nth-child(1) { 
-    width: 5vw; 
+.column:nth-child(1) {
+    width: 5vw;
     background-color: #201E1E;
 }
 
-.column:nth-child(2) { 
-    width: 15vw; 
+.column:nth-child(2) {
+    width: 15vw;
     background-color: #262626;
 }
 
@@ -38,15 +39,17 @@ body {
     width: 80vw;
 }
 
-.row, .top-row {
+.row,
+.top-row {
     border: 1px solid #000000;
     flex: 1;
 }
 
 .top-row {
-    height: 3vh;
+    height: 6vh;
     background-color: #201e1f;
     color: #e0ffdf;
+
 }
 
 .center {
@@ -62,14 +65,79 @@ body {
 .title {
     flex: 0.142;
     background-color: #262626;
-    font-size:2em;
+    font-size: 2em;
     color: violet;
 }
 
-.rainbow-text {
-    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-    -webkit-background-clip: text; /* For Safari */
-    background-clip: text;
-    color: transparent;
+.instrucitons {
+    font-size: 14px;
+    color: violet;
 }
 
+.grid-container {
+    display: grid;
+    flex: auto;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    /* Adjust the minmax values and column count as needed */
+    grid-gap: 30px;
+    /* Adjust the gap between grid items */
+    justify-items: center;
+    /* Center grid items horizontally */
+    align-items: center;
+    /* Center grid items vertically */
+}
+
+.grid-item {
+    background-color: #f2f2f2;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+.list-container {
+    margin-bottom: 20px;
+}
+
+.list-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.song-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.song-single {
+    padding: 1px;
+    background-color: #f2f2f2;
+    border-radius: 1px;
+    margin-bottom: 1px;
+}
+
+
+.song-single:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dropdown-option {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dropdown-option:hover {
+    background-color: #e6e6e6;
+}
