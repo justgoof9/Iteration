@@ -64,16 +64,6 @@ window.onclick = function (event) {
 }
 
 
-
-const initpage = () => {
-    displayTimeSlots('Playlist');
-    console.log("initalize runs");
-};
-
-
-
-window.addEventListener('display', initpage);
-
 // form stuff for adding songs
 // const form = document.getElementById('songSearch');
 
