@@ -13,7 +13,7 @@
 
     <section class="top-row">Radio Manager</section>
     <main class="container">
-        <nav class="flex-column">
+        <nav class="column">
             <a href="../../HTML/CommonPage/CommonPage.html" class="row homeBack center">
                 <div>Home</div>
             </a>
@@ -26,12 +26,16 @@
             </a>
         </nav>
         <section class="list-container column">
-            
+
             <header class="list-title">Current Playlist</header>
             <div class>
-                <h1>Enter Songs to Add to the Current Playlist</h1>
-                <input type="text" id="textInput" placeholder="Search Songs">
-                <button onclick="addItem()">Add Song</button>
+                
+                    <label for="name">Search Songs:</label>
+                    <input type="text" id="textInput" placeholder="Search Songs">
+                    <button type="submit" onclick="addItem()">Add Song</button>
+                
+                <div id="warning-song" style="display: none; color: red;">Please enter a valid song name.</div>
+
             </div>
             <div class="grid-container column">
                 <div class="list-container">
@@ -76,113 +80,33 @@
                 </div>
             </div>
         </section>
-        
-    
-    <section class="list-container column">
+
+
+        <section class="list-container column">
+
+            <header class="list-title">Previous Playlists</header>
+            <div class="grid-container column">
+                <div class="list-container">
+                    <ul class="song-list" id="playlist-list"></ul>
+                </div>
+
+        </section>
+        <section class="column">
+
             
-        <header class="list-title">Previous Playlists</header>
-        <div class="grid-container column">
-            <div class="list-container">
-                <ul class="song-list">
-                    <li>Playlist 1</li>
-                    <li>Playlist 2</li>
-                    <li>Playlist 3</li>
-                </ul
-            </div>
-        </div>
-        
+            <div id="playlistModal" class="modal">
 
+            
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                     <h2 id="playlistName"></h2>
+                    <ul id="songList"></ul>
+                    <div id="songButtons"></div>
+                </div>
 
-    <!-- </section class="column">
-    <div class="list-container" id="rightList">
-        <h2>Playlist 2</h2>
-        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-            <span>Item A</span>
-            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-        </div>
-        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-            <span>Item B</span>
-            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-        </div>
-        <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-            <span>Item C</span>
-            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-        </div>
-    </div>
-</section>
-        </section>
-
-        </section class="column">
-            <div class="list" id="rightList">
-                <h2>Playlist 2</h2>
-                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-                    <span>Item A</span>
-                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-                </div>
-                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-                    <span>Item B</span>
-                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-                </div>
-                <div class="item" onclick="moveItem('rightList', 'leftList', this)">
-                    <span>Item C</span>
-                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
-                </div>
             </div>
         </section>
 
-       <div class="playlist">
-                <h2>Prior Playlist</h2>
-                <table border="1">
-                    <tr>
-                        <th>Playlist 1</th>
-                        <th>Playlist 2</th>
-                        <th>Playlist 3</th>
-                    </tr>
-                    <tr>
-                        <th>Song 4
-                            <button onclick="this.parentNode.parentNode.remove()">Delete</button>
-                            <button>Copy</button>
-                        </th>
-                        <th>Song 5
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </th>
-                        <th>Song 6
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Song 11
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                        <td>Song 12
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                        <td>Song 14
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Song 50
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                        <td>Song 23
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                        <td>Song 45
-                            <button>Remove</button>
-                            <button>Copy</button>
-                        </td>
-                    </tr>
-                </table>
-            </div> -->
-        </section> -->
     </main>
 
     <!-- Include the external JavaScript module file -->

@@ -39,7 +39,7 @@ const displayTimeSlots = (pd) => {
     console.log(`Selected DJ from the function displaytimeslots(): ${pd}`);
     const listOfTimeSlots = document.querySelector('.list-of-djs ul');
     listOfTimeSlots.innerHTML = '';
-
+    
     if (timeSlots[pd]) {
         timeSlots[pd].forEach((dj) => {
             const listItem = document.createElement('li');

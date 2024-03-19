@@ -6,11 +6,10 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #303030;
-    font-size: 14px;
-    color: #268f14;
-    font-weight: 1;
-    font-family: 'sans-serif';
-    ;
+    font-size: 1em;
+    color: #61AD68;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
 .container {
@@ -20,7 +19,7 @@ body {
     width: 100vw;
 }
 
-.flex-column {
+.column {
     display: flex;
     flex-direction: column;
 }
@@ -58,7 +57,7 @@ body {
     align-items: center;
     height: 100vh;
     text-decoration: none;
-    color: orange;
+    color: #61AD68;
 }
 
 
@@ -66,7 +65,24 @@ body {
     flex: 0.142;
     background-color: #262626;
     font-size: 2em;
-    color: violet;
+    color: #e0ffdf;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 5px;
+
+}
+
+li a {
+    text-decoration: none;
+    color: #61AD68;
 }
 
 .instrucitons {
@@ -76,7 +92,7 @@ body {
 
 .grid-container {
     display: grid;
-    flex: auto;
+    flex: none;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     /* Adjust the minmax values and column count as needed */
     grid-gap: 30px;
@@ -141,3 +157,41 @@ body {
 .dropdown-option:hover {
     background-color: #e6e6e6;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* Style for modal content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+  }
+
+  /* Style for close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
