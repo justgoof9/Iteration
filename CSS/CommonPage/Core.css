@@ -37,17 +37,17 @@ a {
 }
 
 .cNav { 
-    flex: .05;
+    flex: .10;
     background-color: #201E1E;
 }
 
 .cSelect {
-    flex: .15;
+    flex: .25;
     background-color: #262626;
 }
 
 .cMain {
-    flex: .8;
+    flex: .7;
 }
 
 .row, .rHeading, .rNav, .rTitle, .rSelect, .rSlot {
